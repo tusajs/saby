@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Выбор даты и времени · ÉLAIRE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead"><strong>ÉLAIRE</strong><span>Онлайн-запись</span></header>
+  <main>
+    <p class="step">Запись в салон · Шаг 2 из 3</p>
+    <h1>Выбор даты и времени</h1>
+    <div class="schedule">
+      <section aria-label="Календарь">
+        <div class="month-nav"><h2 id="month"></h2><div>
+          <button id="previous" aria-label="Предыдущий месяц">‹</button>
+          <button id="next" aria-label="Следующий месяц">›</button>
+        </div></div>
+        <div class="week" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+        <div id="days"></div>
+      </section>
+      <section class="times"><h2>Время визита</h2><p id="slot-date"></p><div id="slots"></div><p class="hint">Занятое время зачёркнуто.</p></section>
+    </div>
+    <footer><div><small>Ваш выбор</small><output id="summary" aria-live="polite"></output></div><button id="continue" disabled>Далее →</button></footer>
+  </main>
+  <dialog id="review"><h2>Детали визита</h2><p id="review-date"></p><form method="dialog"><button>Вернуться к выбору</button></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
