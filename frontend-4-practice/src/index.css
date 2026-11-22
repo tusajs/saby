@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+:root { font-family: "Inter", Arial, sans-serif; color: #253630; background: #f6f4ee; }
+body { margin: 0; }
+.masthead, main { width: min(100% - 40px, 960px); margin: auto; }
+.masthead { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; border-bottom: 1px solid #cbcec2; }
+.masthead strong { font: 32px Georgia, serif; letter-spacing: .11em; }
+.masthead span, small, .step, .hint, #slot-date { color: #51655a; }
+main { padding: 38px 0; }
+.step, small { font-size: 14px; }
+h1, h2, p { margin: 0; }
+h1 { font: 400 clamp(32px, 5vw, 58px)/1.1 Georgia, serif; margin: 12px 0 30px; }
+h2 { font: 400 26px Georgia, serif; }
+.schedule { display: grid; grid-template-columns: 1.2fr 1fr; overflow: hidden; border: 1px solid #cbd1c5; border-radius: 16px; background: #fffef9; }
+section { padding: clamp(16px, 3vw, 34px); }
+.times { border-left: 1px solid #d7dbd0; background: #eef1e9; }
+.month-nav, footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+#month, #slot-date, output { display: block; }
+#month::first-letter, #slot-date::first-letter, output::first-letter { text-transform: uppercase; }
+button { font: inherit; color: inherit; cursor: pointer; background: #fffef9; border: 1px solid #aebbad; border-radius: 8px; min-height: 40px; }
+button:enabled:hover { background: #dee8dc; }
+button:focus-visible { outline: 3px solid #997035; outline-offset: 2px; }
+button:disabled { cursor: default; color: #737a71; }
+.month-nav button { width: 36px; font-size: 22px; }
+.week, #days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; }
+.week { font-size: 13px; margin: 24px 0 8px; color: #536457; }
+#days button { border: 0; background: transparent; }
+#days button:disabled { color: #92978e; }
+#days button:enabled:hover { background: #dee8dc; }
+#days button[aria-pressed=true], #slots button[aria-pressed=true], #continue:enabled { background: #264e40; color: white; }
+#slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+#slots button:disabled { text-decoration: line-through; background: transparent; border-style: dashed; }
+#slot-date { margin: 8px 0 20px; }
+.hint { font-size: 13px; margin-top: 16px; }
+footer { padding: 22px 0; }
+output { margin-top: 5px; }
+#continue, dialog button { padding: 8px 20px; }
+dialog { border: 1px solid #cbd1c5; border-radius: 14px; padding: 28px; color: inherit; }
+dialog p { margin: 18px 0; }
+dialog::backdrop { background: #18291f66; }
+@media (max-width: 650px) {
+  .schedule { grid-template-columns: 1fr; }
+  .times { border-left: 0; border-top: 1px solid #d7dbd0; }
+  main { padding-top: 24px; }
+}
